@@ -15,7 +15,11 @@ A simple Flask webapp protected with HTTP Basic authentication, packaged in a Do
 
 ```bash
 docker build -t webapp-http-basic .
-docker run -d --name webapp-http-basic -p 8080:8080 webapp-http-basic
+docker run -d \
+  --name webapp-http-basic \
+  --restart unless-stopped \
+  -p 80:80 \
+  webapp-http-basic
 ```
 
 ### Test
